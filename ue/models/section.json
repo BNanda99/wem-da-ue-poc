@@ -28,6 +28,10 @@
             {
               "name": "Center",
               "value": "center"
+            },
+            {
+              "name": "Background Purple",
+              "value": "purple"
             }
           ]
         }

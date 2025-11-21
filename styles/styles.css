@@ -16,8 +16,11 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: #6b46c1;
+  --link-hover-color: #553c9a;
+  --purple-color: #6b46c1;
+  --purple-hover-color: #553c9a;
+  --purple-background-color: #4f0099;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -217,6 +220,19 @@ button.secondary {
   color: var(--text-color);
 }
 
+a.button.purple,
+button.purple {
+  background-color: var(--purple-color);
+  color: var(--background-color);
+}
+
+a.button.purple:hover,
+a.button.purple:focus,
+button.purple:hover,
+button.purple:focus {
+  background-color: var(--purple-hover-color);
+}
+
 main img {
   max-width: 100%;
   width: auto;
@@ -259,6 +275,13 @@ main > .section:first-of-type {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.purple {
+  background-color: var(--purple-background-color);
+  color: var(--background-color);
   margin: 0;
   padding: 40px 0;
 }
