@@ -262,3 +262,13 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.center {
+  text-align: center;
+}
+
+main .section.center > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
