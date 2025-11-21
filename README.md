@@ -4,7 +4,7 @@ This project provides a foundation for starting an AEM Edge Delivery Services pr
 
 ## DA compatible
 
-This specific repo has been _slightly_ modified to be compatible with DA's live preview.
+This specific repo has been _slightly_ modified to be compatible with DA's live preview. test comit
 
 ## Getting started
 
