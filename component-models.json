@@ -62,6 +62,10 @@
           {
             "name": "Center",
             "value": "center"
+          },
+          {
+            "name": "Background Purple",
+            "value": "purple"
           }
         ]
       }
@@ -193,6 +197,43 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "page-break",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(2)",
+        "value": "",
+        "label": "Text",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(2)>div:nth-child(2)",
+        "value": "#0071ce",
+        "label": "Line Color",
+        "required": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(3)>div:nth-child(2)",
+        "value": "20px",
+        "label": "Top Margin",
+        "required": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(4)>div:nth-child(2)",
+        "value": "20px",
+        "label": "Bottom Margin",
+        "required": false
       }
     ]
   },

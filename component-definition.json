@@ -159,6 +159,17 @@
           }
         },
         {
+          "title": "Page Break",
+          "id": "page-break",
+          "plugins": {
+            "da": {
+              "name": "page-break",
+              "rows": 4,
+              "columns": 2
+            }
+          }
+        },
+        {
           "title": "Quote",
           "id": "quote",
           "plugins": {

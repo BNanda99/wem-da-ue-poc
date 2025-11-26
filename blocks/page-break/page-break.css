@@ -1,0 +1,84 @@
+.page-break-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-break-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.page-break-line {
+  flex: 1;
+  height: 1px;
+  background-color: #0071ce;
+  min-width: 50px;
+}
+
+.page-break-text {
+  flex-shrink: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-color);
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (width <= 768px) {
+  .page-break-content {
+    gap: 15px;
+  }
+  
+  .page-break-text {
+    font-size: var(--heading-font-size-m);
+    padding: 0 8px;
+  }
+  
+  .page-break-line {
+    min-width: 30px;
+  }
+}
+
+@media (width <= 480px) {
+  .page-break-content {
+    gap: 10px;
+  }
+  
+  .page-break-text {
+    font-size: var(--heading-font-size-s);
+    padding: 0 5px;
+  }
+  
+  .page-break-line {
+    min-width: 20px;
+  }
+}
+
+/* Variation classes for different styles */
+.page-break.thin .page-break-line {
+  height: 0.5px;
+}
+
+.page-break.thick .page-break-line {
+  height: 2px;
+}
+
+.page-break.dashed .page-break-line {
+  border-top: 1px dashed;
+  background: none;
+  height: 0;
+}
+
+.page-break.dotted .page-break-line {
+  border-top: 1px dotted;
+  background: none;
+  height: 0;
+}
