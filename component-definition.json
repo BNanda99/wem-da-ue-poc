@@ -164,7 +164,7 @@
           "plugins": {
             "da": {
               "name": "page-break",
-              "rows": 4,
+              "rows": 2,
               "columns": 1
             }
           }
