@@ -222,14 +222,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "style1",
+        "name": "style",
         "value": "",
         "label": "Top Margin"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "style2",
+        "name": "style",
         "value": "",
         "label": "Bottom Margin"
       }
