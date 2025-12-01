@@ -6,8 +6,8 @@
       "plugins": {
         "da": {
           "name": "page-break",
-          "rows": 4,
-          "columns": 2
+          "rows": 1,
+          "columns": 1
         }
       }
     }
