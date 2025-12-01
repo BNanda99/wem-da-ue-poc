@@ -210,6 +210,14 @@
         "value": "",
         "label": "Text",
         "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "div:nth-child(1)>div:nth-child(1)",
+        "value": "",
+        "label": "Text 2",
+        "required": true
       }
     ]
   },
