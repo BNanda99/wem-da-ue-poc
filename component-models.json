@@ -222,9 +222,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "style",
+        "name": "style1",
         "value": "",
         "label": "Top Margin"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "style2",
+        "value": "",
+        "label": "Bottom Margin"
       }
     ]
   },
