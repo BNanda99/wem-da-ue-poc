@@ -11,9 +11,13 @@
 
 .hero h1 {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+ 
   color: var(--background-color);
+}
+
+.hero .button-container {
+  max-width: 1200px;
+
 }
 
 .hero picture {
