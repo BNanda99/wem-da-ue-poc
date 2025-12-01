@@ -35,14 +35,14 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "style",
+          "name": "classes_top_margin",
           "value": "",
           "label": "Top Margin"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "style",
+          "name": "classes_bottom_margin",
           "value": "",
           "label": "Bottom Margin"
         }
