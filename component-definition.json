@@ -175,7 +175,7 @@
           "plugins": {
             "da": {
               "name": "quote",
-              "rows": 1,
+              "rows": 2,
               "columns": 1
             }
           }
