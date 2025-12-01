@@ -35,16 +35,9 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "top-margin",
+          "name": "classes",
           "value": "",
           "label": "Top Margin"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "bottom-margin",
-          "value": "",
-          "label": "Bottom Margin"
         }
       ]
     }
