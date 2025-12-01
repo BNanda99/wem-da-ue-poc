@@ -180,7 +180,7 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(1)>img:nth-child(2)[type]",
+        "name": "div:nth-child(1)>div:nth-child(1)>picture:nth-child(1)>img:nth-child(3)[src]",
         "label": "Image",
         "multi": false
       },
@@ -206,7 +206,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(1)>div:nth-child(1)",
+        "name": "div:nth-child(1)>div:nth-child(0)",
         "value": "",
         "label": "Text",
         "required": true
@@ -214,7 +214,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(2)>div:nth-child(1)",
+        "name": "div:nth-child(2)>div:nth-child(0)",
         "value": "#0071ce",
         "label": "Line Color",
         "required": false
@@ -222,7 +222,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(3)>div:nth-child(1)",
+        "name": "div:nth-child(3)>div:nth-child(0)",
         "value": "20px",
         "label": "Top Margin",
         "required": false
@@ -230,7 +230,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "div:nth-child(4)>div:nth-child(1)",
+        "name": "div:nth-child(4)>div:nth-child(0)",
         "value": "20px",
         "label": "Bottom Margin",
         "required": false
