@@ -283,7 +283,34 @@ main .section.purple {
   background-color: var(--purple-background-color);
   color: var(--background-color);
   margin: 0;
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+main .section.purple h2 {
+  color: var(--background-color);
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+main .section.purple p {
+  color: var(--background-color);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+main .section.purple .button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 500;
+  padding: 12px 32px;
+}
+
+main .section.purple .button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  text-decoration: none;
 }
 
 main .section.center {
@@ -294,4 +321,30 @@ main .section.center > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main .section.highlight {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 60px 0;
+}
+
+main .section.highlight h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+main .section.highlight .button {
+  background-color: #5e17eb;
+  border: 2px solid #5e17eb;
+  color: white;
+  font-weight: 500;
+  padding: 12px 32px;
+}
+
+main .section.highlight .button:hover {
+  background-color: #4a12ba;
+  border-color: #4a12ba;
+  text-decoration: none;
 }
