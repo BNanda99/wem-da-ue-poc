@@ -1,7 +1,7 @@
 .page-break-container {
   width: 100%;
-  background-color: #0053e2;
-  padding: 20px 24px;
+  background-color: transparent;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,14 +11,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
   gap: 20px;
 }
 
 .page-break-line {
   flex: 1;
-  height: 1px;
-  background-color: white;
+  height: 2px;
+  background-color: #0053e2;
   min-width: 50px;
 }
 
@@ -28,9 +27,9 @@
   font-size: var(--heading-font-size-l);
   font-weight: 400;
   text-align: center;
-  color: white;
+  color: var(--text-color);
   white-space: nowrap;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 /* Responsive adjustments */

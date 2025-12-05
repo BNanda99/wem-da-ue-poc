@@ -6,7 +6,7 @@
       "plugins": {
         "da": {
           "name": "page-break",
-          "rows": 2,
+          "rows": 4,
           "columns": 1
         }
       }
@@ -35,16 +35,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "classes_top_margin",
-          "value": "",
-          "label": "Top Margin"
+          "name": "div:nth-child(3)>div:nth-child(1)",
+          "value": "20px",
+          "label": "Top Margin (px)"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "classes_bottom_margin",
-          "value": "",
-          "label": "Bottom Margin"
+          "name": "div:nth-child(4)>div:nth-child(1)",
+          "value": "20px",
+          "label": "Bottom Margin (px)"
         }
       ]
     }
