@@ -1,0 +1,52 @@
+.hero-cta-container .hero-cta-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-cta {
+  position: relative;
+  padding: 80px 24px 60px;
+  min-height: 200px;
+  text-align: center;
+}
+
+.hero-cta h1 {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  color: var(--background-color);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.hero-cta p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: var(--background-color);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-cta .button-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-cta .button-container .button {
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid var(--background-color);
+  color: var(--background-color);
+}
+
+.hero-cta .button-container .button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (width >= 900px) {
+  .hero-cta {
+    padding: 60px 32px;
+  }
+}

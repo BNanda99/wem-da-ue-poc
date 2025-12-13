@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-cta",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2025-12-13T07:56:46.036Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us.html",
+    "originPage": "Flipkart Ethics homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "blue",
+    "density": "minimal",
+    "purpose": "cta-section",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + button",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "call-to-action sections without images",
+      "colored background CTA blocks",
+      "simple promotional sections"
+    ],
+    "notSuitableFor": [
+      "pages with hero images",
+      "complex multi-column layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart-ethics/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-13T07:56:46.036Z"
+  }
+}

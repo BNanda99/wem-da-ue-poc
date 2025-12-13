@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-action",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-13T07:56:46.036Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us.html",
+    "originPage": "Flipkart Ethics homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "action-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description",
+    "cardCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "action-oriented card grids (Report, Ask, Follow-up)",
+      "service or feature showcases",
+      "navigation cards with images"
+    ],
+    "notSuitableFor": [
+      "product catalogs with many items",
+      "blog post listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart-ethics/en-us"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-13T07:56:46.036Z"
+  }
+}
