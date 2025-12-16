@@ -207,7 +207,7 @@ header nav .nav-sections .search .search-results {
   display: none;
 }
 
-@media (width >= 900px) {
+@media (width >= 768px) {
   header nav .nav-sections {
     display: flex !important;
     visibility: visible !important;
