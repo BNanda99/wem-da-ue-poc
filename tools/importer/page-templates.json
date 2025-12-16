@@ -1,0 +1,61 @@
+{
+  "templates": [
+    {
+      "name": "flipkart-ethics-home",
+      "urls": [
+        "https://www.flipkartethics.com/content/flipkart-ethics/en_us.html"
+      ],
+      "description": "Flipkart Ethics homepage template with hero, page-break, cards, and CTA sections",
+      "blocks": [
+        {
+          "name": "hero-image",
+          "instances": [
+            ".hero-component-v2.full-width.left-align"
+          ]
+        },
+        {
+          "name": "page-break",
+          "instances": [
+            ".page-break-2\\.0"
+          ]
+        },
+        {
+          "name": "cards-action",
+          "instances": [
+            ".cards-3\\.0"
+          ]
+        },
+        {
+          "name": "hero-cta",
+          "instances": [
+            ".hero-component-v2.bg-walmart-blue.center-align"
+          ],
+          "section": "blue"
+        }
+      ]
+    },
+    {
+      "name": "flipkart-ethics-contact",
+      "urls": [
+        "https://www.flipkartethics.com/content/flipkart-ethics/en_us/contact-us.html"
+      ],
+      "description": "Flipkart Ethics contact page template with columns and CTA sections",
+      "blocks": [
+        {
+          "name": "columns-contact",
+          "instances": [
+            ".block-fifty-fifty-v3",
+            ".columns-new-component.col-new-three"
+          ]
+        },
+        {
+          "name": "hero-cta",
+          "instances": [
+            ".hero-component-v2.bg-walmart-blue.center-align"
+          ],
+          "section": "blue"
+        }
+      ]
+    }
+  ]
+}

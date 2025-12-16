@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-16T16:50:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us/contact-us.html",
+    "originPage": "Contact Us page",
+    "blockPosition": "top and middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "contact-info",
+    "imagePattern": "mixed"
+  },
+  "contentPattern": {
+    "structure": "flexible columns (2 or 3)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "contact information pages",
+      "side-by-side content layouts",
+      "informational multi-column sections",
+      "image and text split layouts"
+    ],
+    "notSuitableFor": [
+      "complex card grids",
+      "image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart-ethics/en-us/contact-us"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-16T16:50:00.000Z"
+  }
+}
