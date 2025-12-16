@@ -11,14 +11,13 @@ header nav {
   box-sizing: border-box;
   display: grid;
   grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+    'hamburger brand sections tools' var(--nav-height) / auto auto 1fr auto;
   align-items: center;
   gap: 0 16px;
   margin: auto;
   max-width: 1440px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 13px;
   font-family: var(--body-font-family);
 }
 
@@ -33,10 +32,7 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0 24px;
+    gap: 0 20px;
     max-width: 1440px;
     padding: 0 32px;
   }
@@ -150,143 +146,75 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
+/* sections - search bar */
 header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
+  justify-content: center;
 }
 
 header nav[aria-expanded='true'] .nav-sections {
+  display: none;
+}
+
+/* Search block in nav-sections */
+header nav .nav-sections .search-wrapper {
+  width: 100%;
+  max-width: 500px;
   display: block;
-  visibility: visible;
-  align-self: start;
-  padding: 20px 0;
 }
 
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-m);
-  margin: 0;
+header nav .nav-sections .search {
+  width: 100%;
 }
 
-header nav .nav-sections ul > li {
-  font-weight: 400;
-  padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
+header nav .nav-sections .search .search-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 0 12px;
+  gap: 8px;
 }
 
-header nav .nav-sections ul > li:last-child {
-  border-bottom: none;
+header nav .nav-sections .search .icon-search {
+  display: flex;
+  align-items: center;
 }
 
-header nav .nav-sections ul > li a {
-  display: block;
-  padding: 8px 0;
-  color: #ffffff;
-  text-decoration: none;
+header nav .nav-sections .search .icon-search img {
+  width: 20px;
+  height: 20px;
 }
 
-header nav .nav-sections ul > li a:hover {
-  color: #FFC107;
+header nav .nav-sections .search input {
+  flex: 1;
+  padding: 8px 4px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 14px;
+  outline: none;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+header nav .nav-sections .search input::placeholder {
+  color: #999;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
+header nav .nav-sections .search .search-results {
+  display: none;
 }
 
 @media (width >= 900px) {
   header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
+    display: flex !important;
+    visibility: visible !important;
   }
 
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-    padding: 0;
-    border-bottom: none;
-  }
-
-  header nav .nav-sections ul > li a {
-    padding: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-    z-index: 1;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+  header nav .nav-sections .search-wrapper {
+    max-width: 500px;
   }
 }
 

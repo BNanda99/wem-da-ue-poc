@@ -2,13 +2,15 @@
 
 ---
 
-- [Contact Us](/contact-us)
-- [Report a Concern](/report-a-concern)
-- [Follow-up](/follow-up)
++------------------------------------------------+
+| Search                                         |
++------------------------------------------------+
+| Hey, What are you looking for?                 |
++------------------------------------------------+
 
 ---
 
-Login
+Logout
 
 +----------------------------+
 | Metadata                   |
