@@ -1,10 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #001E60;
   width: 100%;
   z-index: 2;
   position: fixed;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: none;
 }
 
 header nav {
@@ -58,7 +58,7 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: #ffffff;
 }
 
 /* hamburger */
@@ -75,8 +75,8 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: #5e17eb;
+  background-color: transparent;
+  color: #ffffff;
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
@@ -139,14 +139,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 50px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 50px;
   height: auto;
 }
 
@@ -185,12 +185,12 @@ header nav .nav-sections ul > li:last-child {
 header nav .nav-sections ul > li a {
   display: block;
   padding: 8px 0;
-  color: var(--text-color);
+  color: #ffffff;
   text-decoration: none;
 }
 
 header nav .nav-sections ul > li a:hover {
-  color: var(--link-color);
+  color: #FFC107;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -302,12 +302,12 @@ header nav .nav-tools p {
   margin: 0;
   font-size: var(--body-font-size-s);
   font-weight: 500;
-  color: var(--text-color);
+  color: #ffffff;
   cursor: pointer;
 }
 
 header nav .nav-tools p:hover {
-  color: var(--link-color);
+  color: #FFC107;
 }
 
 header nav .nav-tools .button {
@@ -316,11 +316,11 @@ header nav .nav-tools .button {
   padding: 0.5em;
   background: none;
   line-height: 0;
-  color: #5e17eb;
+  color: #ffffff;
 }
 
 header nav .nav-tools .button:hover {
-  opacity: 0.8;
+  color: #FFC107;
 }
 
 /* Hide metadata section in nav-tools */
