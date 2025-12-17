@@ -11,7 +11,7 @@ header nav {
   box-sizing: border-box;
   display: grid;
   grid-template:
-    'hamburger brand sections tools' var(--nav-height) / auto auto 1fr auto;
+    'hamburger brand search tools' var(--nav-height) / auto auto 1fr auto;
   align-items: center;
   gap: 0 16px;
   margin: auto;
@@ -25,6 +25,7 @@ header nav[aria-expanded='true'] {
   grid-template:
     'hamburger brand' var(--nav-height)
     'sections sections' 1fr
+    'search search' auto
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
@@ -146,7 +147,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections - navigation links and search bar */
+/* sections - navigation links */
 header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
@@ -159,6 +160,14 @@ header nav[aria-expanded='true'] .nav-sections {
   visibility: visible;
   align-self: start;
   padding: 20px 0;
+}
+
+/* search area */
+header nav .nav-search {
+  grid-area: search;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Navigation links in mobile menu */
@@ -187,23 +196,17 @@ header nav .nav-sections ul li a:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Hide search bar in mobile menu */
-header nav[aria-expanded='true'] .nav-sections .search-wrapper {
-  display: none;
-}
-
-/* Search block in nav-sections */
-header nav .nav-sections .search-wrapper {
+/* Search block styling */
+header nav .nav-search .search-wrapper {
   width: 100%;
   max-width: 500px;
-  display: none;
 }
 
-header nav .nav-sections .search {
+header nav .nav-search .search {
   width: 100%;
 }
 
-header nav .nav-sections .search .search-box {
+header nav .nav-search .search .search-box {
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -212,17 +215,17 @@ header nav .nav-sections .search .search-box {
   gap: 8px;
 }
 
-header nav .nav-sections .search .icon-search {
+header nav .nav-search .search .icon-search {
   display: flex;
   align-items: center;
 }
 
-header nav .nav-sections .search .icon-search img {
+header nav .nav-search .search .icon-search img {
   width: 20px;
   height: 20px;
 }
 
-header nav .nav-sections .search input {
+header nav .nav-search .search input {
   flex: 1;
   padding: 8px 4px;
   border: none;
@@ -232,34 +235,34 @@ header nav .nav-sections .search input {
   outline: none;
 }
 
-header nav .nav-sections .search input::placeholder {
+header nav .nav-search .search input::placeholder {
   color: #999;
 }
 
-header nav .nav-sections .search .search-results {
+header nav .nav-search .search .search-results {
+  display: none;
+}
+
+/* Hide search on mobile when menu closed */
+header nav[aria-expanded='false'] .nav-search {
   display: none;
 }
 
 @media (width >= 768px) {
-  header nav .nav-sections {
+  /* Show search bar on desktop */
+  header nav .nav-search {
     display: flex !important;
-    visibility: visible !important;
-    justify-content: center;
   }
 
-  /* Hide navigation links on desktop (but show search bar) */
-  header nav .nav-sections > .default-content-wrapper > ul {
+  /* Keep navigation links hidden on desktop when menu closed */
+  header nav[aria-expanded='false'] .nav-sections {
     display: none;
   }
 
-  header nav .nav-sections .search-wrapper {
+  /* Show navigation links when menu is open on desktop */
+  header nav[aria-expanded='true'] .nav-sections {
     display: block;
-    max-width: 500px;
-  }
-
-  /* Show navigation links when menu is open on mobile/tablet */
-  header nav[aria-expanded='true'] .nav-sections > .default-content-wrapper > ul {
-    display: block;
+    visibility: visible;
   }
 }
 

@@ -242,12 +242,17 @@ export default async function decorate(block) {
         }
       });
     });
-
-    // Add search bar to nav-sections
-    const searchBar = createSearchBar();
-    navSections.appendChild(searchBar);
-    decorateIcons(searchBar);
   }
+
+  // Add search bar after nav-sections as a separate element
+  const searchBar = createSearchBar();
+  searchBar.classList.add('nav-search');
+  if (navSections) {
+    navSections.parentElement.insertBefore(searchBar, navSections.nextSibling);
+  } else if (nav.querySelector('.nav-brand')) {
+    nav.querySelector('.nav-brand').after(searchBar);
+  }
+  decorateIcons(searchBar);
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
