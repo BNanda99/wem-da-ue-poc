@@ -205,8 +205,6 @@ function createSearchBar() {
  */
 export default async function decorate(block) {
   // load nav as fragment
-
-  console.log(block);
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
@@ -223,15 +221,35 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
+  // Handle brand section - add PhonePe Ethics text
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('.button');
+    if (brandLink) {
+      brandLink.className = '';
+      brandLink.closest('.button-container').className = '';
+    }
+
+    // Add PhonePe Ethics text
+    const brandText = document.createElement('div');
+    brandText.className = 'brand-text';
+    brandText.textContent = 'PhonePe Ethics';
+    navBrand.appendChild(brandText);
   }
 
+  // Handle navigation sections
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    // Add menu title
+    const menuTitle = document.createElement('div');
+    menuTitle.className = 'menu-title';
+    menuTitle.innerHTML = '<h3>Menu</h3><button class="menu-close" aria-label="Close menu">×</button>';
+    navSections.insertBefore(menuTitle, navSections.firstChild);
+
+    // Add close button functionality
+    const closeButton = menuTitle.querySelector('.menu-close');
+    closeButton.addEventListener('click', () => toggleMenu(nav, navSections, true));
+
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
@@ -244,7 +262,7 @@ export default async function decorate(block) {
     });
   }
 
-  // Add search bar after nav-sections as a separate element
+  // Create and add search bar
   const searchBar = createSearchBar();
   searchBar.classList.add('nav-search');
   if (navSections) {
@@ -254,20 +272,22 @@ export default async function decorate(block) {
   }
   decorateIcons(searchBar);
 
+  // Handle tools section
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const search = navTools.querySelector('a[href*="search"]');
-    if (search && search.textContent === '') {
-      search.setAttribute('aria-label', 'Search');
-    }
-
     // Replace :bell: text with actual bell icon
-    const bellParagraph = Array.from(navTools.querySelectorAll('p')).find(p => p.textContent.trim() === ':bell:');
+    const bellParagraph = Array.from(navTools.querySelectorAll('p')).find((p) => p.textContent.trim() === ':bell:');
     if (bellParagraph) {
       bellParagraph.innerHTML = '';
       const bellSpan = document.createElement('span');
       bellSpan.className = 'icon icon-bell';
       bellParagraph.appendChild(bellSpan);
+    }
+
+    // Style logout text
+    const logoutParagraph = Array.from(navTools.querySelectorAll('p')).find((p) => p.textContent.trim() === 'Logout');
+    if (logoutParagraph) {
+      logoutParagraph.className = 'logout-text';
     }
 
     // Decorate icons in nav-tools
@@ -283,8 +303,9 @@ export default async function decorate(block) {
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
+
   // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, isDesktop.matches);
+  toggleMenu(nav, navSections, true); // Force closed state initially
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
   const navWrapper = document.createElement('div');
