@@ -1,4 +1,4 @@
-import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
+import { fetchPlaceholders, getMetadata, decorateIcons } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -168,6 +168,37 @@ async function buildBreadcrumbs() {
   return breadcrumbs;
 }
 
+function createSearchBar() {
+  const searchWrapper = document.createElement('div');
+  searchWrapper.className = 'search-wrapper';
+
+  const searchBlock = document.createElement('div');
+  searchBlock.className = 'search';
+
+  const searchBox = document.createElement('div');
+  searchBox.className = 'search-box';
+
+  const searchIcon = document.createElement('span');
+  searchIcon.className = 'icon icon-search';
+
+  const searchInput = document.createElement('input');
+  searchInput.type = 'search';
+  searchInput.placeholder = 'Hey, What are you looking for?';
+  searchInput.setAttribute('aria-label', 'Search');
+
+  searchBox.appendChild(searchIcon);
+  searchBox.appendChild(searchInput);
+  searchBlock.appendChild(searchBox);
+
+  const searchResults = document.createElement('div');
+  searchResults.className = 'search-results';
+  searchBlock.appendChild(searchResults);
+
+  searchWrapper.appendChild(searchBlock);
+
+  return searchWrapper;
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -211,6 +242,11 @@ export default async function decorate(block) {
         }
       });
     });
+
+    // Add search bar to nav-sections
+    const searchBar = createSearchBar();
+    navSections.appendChild(searchBar);
+    decorateIcons(searchBar);
   }
 
   const navTools = nav.querySelector('.nav-tools');
@@ -219,6 +255,18 @@ export default async function decorate(block) {
     if (search && search.textContent === '') {
       search.setAttribute('aria-label', 'Search');
     }
+
+    // Replace :bell: text with actual bell icon
+    const bellParagraph = Array.from(navTools.querySelectorAll('p')).find(p => p.textContent.trim() === ':bell:');
+    if (bellParagraph) {
+      bellParagraph.innerHTML = '';
+      const bellSpan = document.createElement('span');
+      bellSpan.className = 'icon icon-bell';
+      bellParagraph.appendChild(bellSpan);
+    }
+
+    // Decorate icons in nav-tools
+    decorateIcons(navTools);
   }
 
   // hamburger for mobile
