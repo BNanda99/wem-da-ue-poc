@@ -227,8 +227,13 @@ export default async function decorate(block) {
     // Add menu title
     const menuTitle = document.createElement('div');
     menuTitle.className = 'menu-title';
-    menuTitle.innerHTML = '<h3>Menu</h3><button class="menu-close" aria-label="Close menu">×</button>';
+    menuTitle.innerHTML = '<h3>Menu</h3><button class="menu-close" aria-label="Close menu"><span class="nav-hamburger-icon"></span></button>';
     navSections.insertBefore(menuTitle, navSections.firstChild);
+
+    // prevent mobile nav behavior on window resize
+    toggleMenu(nav, navSections, true); // Force closed state initially
+    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+    
 
     // Add close button functionality
     const closeButton = menuTitle.querySelector('.menu-close');
@@ -278,19 +283,6 @@ export default async function decorate(block) {
     decorateIcons(navTools);
   }
 
-  // hamburger for mobile
-  const hamburger = document.createElement('div');
-  hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
-    </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
-  nav.setAttribute('aria-expanded', 'false');
-
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, true); // Force closed state initially
-  isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
