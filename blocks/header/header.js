@@ -252,14 +252,14 @@ export default async function decorate(block) {
   }
 
   // Create and add search bar
-  const searchBar = createSearchBar();
-  searchBar.classList.add('nav-search');
-  if (navSections) {
-    navSections.parentElement.insertBefore(searchBar, navSections.nextSibling);
-  } else if (nav.querySelector('.nav-brand')) {
-    nav.querySelector('.nav-brand').after(searchBar);
-  }
-  decorateIcons(searchBar);
+  // const searchBar = createSearchBar();
+  // searchBar.classList.add('nav-search');
+  // if (navSections) {
+  //   navSections.parentElement.insertBefore(searchBar, navSections.nextSibling);
+  // } else if (nav.querySelector('.nav-brand')) {
+  //   nav.querySelector('.nav-brand').after(searchBar);
+  // }
+  decorateIcons(document.querySelector('.search-wrapper'));
 
   // Handle tools section
   const navTools = nav.querySelector('.nav-tools');
