@@ -240,6 +240,17 @@ export default async function decorate(block) {
   // Handle navigation sections
   const navSections = nav.querySelector('.nav-hamburger');
   if (navSections) {
+    navSections.classList.add('nav-sections');
+    navSections.classList.remove('nav-hamburger');
+    
+    // Create hamburger button
+    const hamburger = document.createElement('div');
+    hamburger.className = 'nav-hamburger';
+    hamburger.innerHTML = '<button type="button" aria-controls="nav" aria-label="Open navigation"><span class="nav-hamburger-icon"></span></button>';
+    
+    // Insert hamburger button as first child of nav
+    nav.insertBefore(hamburger, nav.firstChild);
+    
     // Add menu title
     const menuTitle = document.createElement('div');
     menuTitle.className = 'menu-title';
@@ -251,7 +262,7 @@ export default async function decorate(block) {
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
     
     // Add hamburger button click listener
-    const hamburgerButton = nav.querySelector('.nav-hamburger button');
+    const hamburgerButton = hamburger.querySelector('button');
     if (hamburgerButton) {
       hamburgerButton.addEventListener('click', () => toggleMenu(nav, navSections));
     }
