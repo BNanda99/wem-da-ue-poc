@@ -259,7 +259,7 @@ export default async function decorate(block) {
   // } else if (nav.querySelector('.nav-brand')) {
   //   nav.querySelector('.nav-brand').after(searchBar);
   // }
-  decorateIcons(nav.querySelector('.search-wrapper'));
+  //decorateIcons(nav.querySelector('.search-wrapper'));
 
   // Handle tools section
   const navTools = nav.querySelector('.nav-tools');
