@@ -221,22 +221,6 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Handle brand section - add PhonePe Ethics text
-  const navBrand = nav.querySelector('.nav-brand');
-  if (navBrand) {
-    const brandLink = navBrand.querySelector('.button');
-    if (brandLink) {
-      brandLink.className = '';
-      brandLink.closest('.button-container').className = '';
-    }
-
-    // Add PhonePe Ethics text
-    const brandText = document.createElement('div');
-    brandText.className = 'brand-text';
-    brandText.textContent = 'PhonePe Ethics';
-    navBrand.appendChild(brandText);
-  }
-
   // Handle navigation sections
   const navSections = nav.querySelector('.nav-hamburger');
   if (navSections) {
