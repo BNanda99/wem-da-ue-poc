@@ -231,22 +231,22 @@ export default async function decorate(block) {
   nav.setAttribute('aria-expanded', 'false');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['hamburger', 'brand', 'search', 'tools'];
+  // Create hamburger button first (before applying classes to children)
+  const hamburger = document.createElement('div');
+  hamburger.className = 'nav-hamburger';
+  hamburger.innerHTML = '<button type="button" aria-controls="nav" aria-label="Open navigation"><span class="nav-hamburger-icon"></span></button>';
+
+  const classes = ['brand', 'search', 'tools'];
+  // Skip first child (will be nav-sections), apply classes starting from index 1
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Handle navigation sections
-  const navSections = nav.querySelector('.nav-hamburger');
+  // Handle navigation sections (first child from fragment)
+  const navSections = nav.children[0];
   if (navSections) {
     navSections.classList.add('nav-sections');
-    navSections.classList.remove('nav-hamburger');
-    
-    // Create hamburger button
-    const hamburger = document.createElement('div');
-    hamburger.className = 'nav-hamburger';
-    hamburger.innerHTML = '<button type="button" aria-controls="nav" aria-label="Open navigation"><span class="nav-hamburger-icon"></span></button>';
     
     // Insert hamburger button as first child of nav
     nav.insertBefore(hamburger, nav.firstChild);
