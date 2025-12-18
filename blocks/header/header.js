@@ -215,7 +215,7 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['hamburger', 'brand', 'search', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
@@ -238,7 +238,7 @@ export default async function decorate(block) {
   }
 
   // Handle navigation sections
-  const navSections = nav.querySelector('.nav-sections');
+  const navSections = nav.querySelector('.nav-hamburger');
   if (navSections) {
     // Add menu title
     const menuTitle = document.createElement('div');
