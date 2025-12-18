@@ -75,6 +75,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  
+  // Handle overlay for mobile menu
+  const existingOverlay = document.querySelector('.nav-overlay');
+  if (!expanded && !isDesktop.matches) {
+    // Create overlay when opening menu
+    if (!existingOverlay) {
+      const overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      overlay.addEventListener('click', () => toggleMenu(nav, navSections, true));
+      document.body.appendChild(overlay);
+    }
+  } else if (existingOverlay) {
+    // Remove overlay when closing menu
+    existingOverlay.remove();
+  }
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -213,6 +228,7 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
+  nav.setAttribute('aria-expanded', 'false');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['hamburger', 'brand', 'search', 'tools'];
@@ -234,6 +250,11 @@ export default async function decorate(block) {
     toggleMenu(nav, navSections, true); // Force closed state initially
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
     
+    // Add hamburger button click listener
+    const hamburgerButton = nav.querySelector('.nav-hamburger button');
+    if (hamburgerButton) {
+      hamburgerButton.addEventListener('click', () => toggleMenu(nav, navSections));
+    }
 
     // Add close button functionality
     const closeButton = menuTitle.querySelector('.menu-close');
