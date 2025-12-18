@@ -155,7 +155,7 @@ header nav .nav-brand .brand-text {
 
 /* sections - navigation links */
 header nav .nav-sections {
-  grid-area: unset;
+  grid-area: sections;
   position: fixed;
   top: 0;
   left: -300px;
