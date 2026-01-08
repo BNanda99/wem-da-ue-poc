@@ -75,6 +75,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  
+  // Handle overlay for mobile menu
+  const existingOverlay = document.querySelector('.nav-overlay');
+  if (!expanded && !isDesktop.matches) {
+    // Create overlay when opening menu
+    if (!existingOverlay) {
+      const overlay = document.createElement('div');
+      overlay.className = 'nav-overlay';
+      overlay.addEventListener('click', () => toggleMenu(nav, navSections, true));
+      document.body.appendChild(overlay);
+    }
+  } else if (existingOverlay) {
+    // Remove overlay when closing menu
+    existingOverlay.remove();
+  }
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -213,38 +228,44 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
+  nav.setAttribute('aria-expanded', 'false');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['hamburger', 'brand', 'search', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Handle brand section - add PhonePe Ethics text
-  const navBrand = nav.querySelector('.nav-brand');
-  if (navBrand) {
-    const brandLink = navBrand.querySelector('.button');
-    if (brandLink) {
-      brandLink.className = '';
-      brandLink.closest('.button-container').className = '';
-    }
-
-    // Add PhonePe Ethics text
-    const brandText = document.createElement('div');
-    brandText.className = 'brand-text';
-    brandText.textContent = 'PhonePe Ethics';
-    navBrand.appendChild(brandText);
-  }
-
   // Handle navigation sections
-  const navSections = nav.querySelector('.nav-sections');
+  const navSections = nav.querySelector('.nav-hamburger');
   if (navSections) {
+    navSections.classList.add('nav-sections');
+    navSections.classList.remove('nav-hamburger');
+    
+    // Create hamburger button
+    const hamburger = document.createElement('div');
+    hamburger.className = 'nav-hamburger';
+    hamburger.innerHTML = '<button type="button" aria-controls="nav" aria-label="Open navigation"><span class="nav-hamburger-icon"></span></button>';
+    
+    // Insert hamburger button as first child of nav
+    nav.insertBefore(hamburger, nav.firstChild);
+    
     // Add menu title
     const menuTitle = document.createElement('div');
     menuTitle.className = 'menu-title';
-    menuTitle.innerHTML = '<h3>Menu</h3><button class="menu-close" aria-label="Close menu">×</button>';
+    menuTitle.innerHTML = '<h3>Menu</h3><button class="menu-close" aria-label="Close menu"><span class="nav-hamburger-icon"></span></button>';
     navSections.insertBefore(menuTitle, navSections.firstChild);
+
+    // prevent mobile nav behavior on window resize
+    toggleMenu(nav, navSections, true); // Force closed state initially
+    isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+    
+    // Add hamburger button click listener
+    const hamburgerButton = hamburger.querySelector('button');
+    if (hamburgerButton) {
+      hamburgerButton.addEventListener('click', () => toggleMenu(nav, navSections));
+    }
 
     // Add close button functionality
     const closeButton = menuTitle.querySelector('.menu-close');
@@ -263,14 +284,14 @@ export default async function decorate(block) {
   }
 
   // Create and add search bar
-  const searchBar = createSearchBar();
-  searchBar.classList.add('nav-search');
-  if (navSections) {
-    navSections.parentElement.insertBefore(searchBar, navSections.nextSibling);
-  } else if (nav.querySelector('.nav-brand')) {
-    nav.querySelector('.nav-brand').after(searchBar);
-  }
-  decorateIcons(searchBar);
+  // const searchBar = createSearchBar();
+  // searchBar.classList.add('nav-search');
+  // if (navSections) {
+  //   navSections.parentElement.insertBefore(searchBar, navSections.nextSibling);
+  // } else if (nav.querySelector('.nav-brand')) {
+  //   nav.querySelector('.nav-brand').after(searchBar);
+  // }
+  //decorateIcons(nav.querySelector('.search-wrapper'));
 
   // Handle tools section
   const navTools = nav.querySelector('.nav-tools');
@@ -294,19 +315,6 @@ export default async function decorate(block) {
     decorateIcons(navTools);
   }
 
-  // hamburger for mobile
-  const hamburger = document.createElement('div');
-  hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
-    </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
-  nav.setAttribute('aria-expanded', 'false');
-
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, true); // Force closed state initially
-  isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
