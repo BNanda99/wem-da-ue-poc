@@ -1,5 +1,5 @@
 {
-  "project": "DA Block Collection",
-  "editUrlLabel": "Document Authoring",
+  "project": "WEM DA UE POC",
+  "editUrlLabel": "WE Document Authoring UE POC",
   "editUrlPattern": "https://da.live/edit#/{{org}}/{{site}}{{pathname}}"
 }
