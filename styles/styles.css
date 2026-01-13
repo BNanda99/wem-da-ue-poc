@@ -348,3 +348,9 @@ main .section.highlight .button:hover {
   border-color: #4a12ba;
   text-decoration: none;
 }
+
+/* Hide metadata block */
+.metadata-wrapper,
+.metadata {
+  display: none;
+}

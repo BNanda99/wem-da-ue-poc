@@ -1,0 +1,38 @@
+{
+  "variantName": "embed-form",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-01-13T15:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us/report-a-concern.html",
+    "originPage": "Report a Concern page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "form-embed",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "iframe",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "external form embeds",
+      "reporting forms",
+      "survey embeds"
+    ],
+    "notSuitableFor": [
+      "video embeds",
+      "social media embeds"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart/report-a-concern"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-13T15:30:00.000Z"
+  }
+}

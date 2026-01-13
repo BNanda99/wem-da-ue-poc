@@ -56,6 +56,33 @@
           "section": "blue"
         }
       ]
+    },
+    {
+      "name": "flipkart-ethics-report-concern",
+      "urls": [
+        "https://www.flipkartethics.com/content/flipkart-ethics/en_us/report-a-concern.html"
+      ],
+      "description": "Report a Concern page template with hero columns, instructions, and form with sidebar",
+      "blocks": [
+        {
+          "name": "columns-hero",
+          "instances": [
+            ".block-fifty-fifty-v3"
+          ]
+        },
+        {
+          "name": "columns-form",
+          "instances": [
+            ".columns-new-component.col-new-7525"
+          ]
+        },
+        {
+          "name": "embed-form",
+          "instances": [
+            ".columns-new-component iframe"
+          ]
+        }
+      ]
     }
   ]
 }

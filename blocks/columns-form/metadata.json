@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-form",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-13T15:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us/report-a-concern.html",
+    "originPage": "Report a Concern page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "form-sidebar",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "embed + sidebar-links",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "form pages with sidebar navigation",
+      "content with related links sidebar",
+      "main content with supplementary info"
+    ],
+    "notSuitableFor": [
+      "equal-width column layouts",
+      "image-heavy layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart/report-a-concern"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-13T15:30:00.000Z"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-hero",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-13T15:30:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.flipkartethics.com/content/flipkart-ethics/en_us/report-a-concern.html",
+    "originPage": "Report a Concern page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "hero-intro",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "hero sections with 50/50 image and text",
+      "intro sections with large image",
+      "landing page headers with visual"
+    ],
+    "notSuitableFor": [
+      "text-only layouts",
+      "multi-column content grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/flipkart/report-a-concern"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-13T15:30:00.000Z"
+  }
+}
